@@ -64,7 +64,7 @@ function listener({ totalHits, hits }, response) {
   }
 
   if (maxPage <= currentPage) {
-    animalsMarkup(hits);
+    imagesGalleryMarkup(hits);
     Notiflix.Notify.failure(
       "We're sorry, but you've reached the end of search results."
     );
@@ -73,10 +73,10 @@ function listener({ totalHits, hits }, response) {
     return;
   }
 
-  return animalsMarkup(hits);
+  return imagesGalleryMarkup(hits);
 }
 
-function animalsMarkup(data) {
+function imagesGalleryMarkup(data) {
   refs.galleryList.insertAdjacentHTML('beforeend', galleryItem(data));
   lightbox.refresh();
 }
